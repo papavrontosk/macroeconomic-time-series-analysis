@@ -106,10 +106,6 @@ source("code/analysis.R")
 
 The script reproduces all preprocessing, model estimation, diagnostics, and figures used throughout the project.
 
-> **Note**
->
-> The original data files are not included in this repository.
-> If the required macroeconomic series are unavailable locally, they should be downloaded from their original public sources before executing the analysis.
 
 ---
 
