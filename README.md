@@ -32,11 +32,19 @@ The analysis includes:
 
 ```
 .
+├── data/
+│   ├── FEDFUNDS.csv
+│   ├── GDPC1.csv
+│   └── GDPCTPI.csv
+│
 ├── notebooks/
 │   └── macroeconomic_time_series_analysis.ipynb
 │
 ├── code/
 │   └── analysis.R
+│
+├── results/
+│   └── IRF_3x3_BIC_model.png
 │
 ├── docs/
 │   ├── assignment.pdf
