@@ -1,11 +1,2 @@
 .Rhistory
 .RData
-.Rproj.user/
-
-.ipynb_checkpoints/
-
-*.csv
-*.xlsx
-*.xls
-
-.DS_Store
