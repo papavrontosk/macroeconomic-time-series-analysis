@@ -89,6 +89,8 @@ The estimated VAR(1) model suggests that:
 
 ### Impulse Response Functions
 
+The figure below summarizes the estimated dynamic responses of GDP growth, inflation, and the Federal Funds Rate to orthogonalized structural shocks under the recursive (Cholesky) identification scheme.
+
 ![Impulse Response Functions](results/IRF_3x3_BIC_model.png)
 
 ---
