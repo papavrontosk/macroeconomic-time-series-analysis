@@ -2,120 +2,131 @@
 
 ## Overview
 
-This project investigates the dynamic relationships among key U.S. macroeconomic indicators using modern time series econometric techniques.
+This project investigates the dynamic effects of U.S. monetary policy on real economic activity and inflation using a Structural Vector Autoregression (SVAR).
 
-The analysis focuses on modeling the interaction between Real GDP, inflation, and monetary policy while demonstrating a complete empirical workflow including data acquisition, preprocessing, stationarity testing, model estimation, forecasting, and diagnostic evaluation.
+Quarterly macroeconomic data are obtained from the Federal Reserve Economic Data (FRED) database and transformed into a multivariate time series framework. The analysis estimates a recursively identified VAR model, evaluates its statistical properties, and examines the dynamic responses of output, inflation, and interest rates through impulse response functions.
 
-The project was implemented in **R** as part of an applied econometrics assignment and has been reorganized into a reproducible GitHub repository.
+The project demonstrates a complete empirical workflow for macroeconomic time series analysis, including data preparation, model estimation, diagnostic testing, structural identification, and robustness validation.
 
 ---
 
-## Objectives
+## Project Objectives
 
-The analysis includes:
-
-- Collection of macroeconomic time series
-- Exploratory time series visualization
-- Stationarity testing (ADF)
-- Time series transformation
-- VAR model estimation
-- Lag order selection
-- Impulse Response Functions (IRFs)
-- Forecast Error Variance Decomposition (FEVD)
-- Granger causality analysis
-- Model diagnostics
-- Economic interpretation of results
+- Prepare quarterly U.S. macroeconomic time series
+- Transform variables for VAR estimation
+- Select the optimal lag order using statistical criteria
+- Estimate a Structural Vector Autoregression (SVAR)
+- Evaluate model stability and residual diagnostics
+- Analyze monetary policy transmission using impulse response functions
+- Validate lag selection through rolling-origin cross-validation
 
 ---
 
 ## Repository Structure
 
-```
+```text
 .
-├── README.md
-├── LICENSE
-├── .gitignore
-│
-├── code
+├── code/
 │   └── analysis.R
 │
-├── data
+├── data/
 │   ├── GDPC1.csv
 │   ├── GDPCTPI.csv
 │   └── FEDFUNDS.csv
 │
-├── notebooks
+├── notebooks/
 │   └── macroeconomic_time_series_analysis.ipynb
 │
-└── docs
-    ├── assignment.pdf
-    └── report.pdf
+├── docs/
+│   ├── assignment.pdf
+│   └── report.pdf
+│
+├── results/
+│   └── IRF_3x3_BIC_model.png
+│
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
 ## Data
 
-The empirical analysis uses three U.S. macroeconomic time series:
+The analysis uses quarterly U.S. macroeconomic data from the Federal Reserve Economic Data (FRED) database:
 
-- Real Gross Domestic Product (GDPC1)
-- GDP Price Index (GDPCTPI)
-- Effective Federal Funds Rate (FEDFUNDS)
+- **GDPC1** – Real Gross Domestic Product
+- **GDPCTPI** – GDP Price Index
+- **FEDFUNDS** – Effective Federal Funds Rate
 
-These series were originally obtained from publicly available economic databases and are **not redistributed in this repository**.
+Real GDP and the GDP Price Index are transformed into quarter-over-quarter log differences, while the Federal Funds Rate is used in levels, following the project specification.
 
 ---
 
-## Methods
+## Methodology
 
-The project applies several standard econometric techniques commonly used in empirical macroeconomics:
+The empirical analysis follows these steps:
 
-- Time series visualization
-- Unit root testing
-- Stationarity transformations
-- Vector Autoregression (VAR)
-- Lag selection using information criteria
-- Granger causality tests
-- Impulse Response Functions
-- Forecast Error Variance Decomposition
-- Residual diagnostics
-- Economic interpretation
+1. Data acquisition and preprocessing
+2. Variable transformation
+3. Lag order selection (BIC)
+4. Vector Autoregression estimation
+5. Model stability and diagnostic testing
+6. Recursive (Cholesky) structural identification
+7. Impulse response analysis
+8. Rolling-origin cross-validation as a robustness check
+
+---
+
+## Main Findings
+
+The estimated VAR(1) model suggests that:
+
+- Monetary policy responds systematically to changes in output growth and inflation.
+- Contractionary monetary policy shocks produce a modest negative response in output growth.
+- Inflation exhibits the well-known **price puzzle**, a common result in recursively identified monetary policy VAR models.
+- Both the Bayesian Information Criterion (BIC) and rolling-origin cross-validation select the same lag order, supporting the robustness of the empirical specification.
 
 ---
 
 ## Technologies
 
 - R
+- Vector Autoregression (VAR)
+- Structural VAR (SVAR)
+- FRED Macroeconomic Data
+- forecast
 - vars
 - urca
 - tseries
-- forecast
 - ggplot2
-- tidyverse
 
 ---
 
 ## Reproducibility
 
-Run the complete analysis with:
+Install the required R packages and run:
 
 ```r
 source("code/analysis.R")
 ```
 
-The script reproduces all preprocessing, model estimation, diagnostics, and figures used throughout the project.
+The script reproduces the complete empirical analysis, including model estimation, diagnostic tests, impulse response functions, and robustness checks.
 
+Alternatively, the analysis can be explored interactively through the accompanying Jupyter notebook.
 
 ---
 
-## Project Highlights
+## Repository Contents
 
-- Complete macroeconomic time series workflow
-- Vector Autoregression (VAR) modeling
-- Dynamic causal analysis using IRFs and FEVD
-- Granger causality testing
-- Forecasting and model diagnostics
-- Fully documented empirical analysis
+This repository includes:
+
+- Complete R implementation
+- Reproducible Jupyter notebook
+- Project report
+- Assignment description
+- Input datasets
+- Generated impulse response figures
 
 ---
 
