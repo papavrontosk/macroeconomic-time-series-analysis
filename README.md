@@ -87,6 +87,10 @@ The estimated VAR(1) model suggests that:
 - Inflation exhibits the well-known **price puzzle**, a common result in recursively identified monetary policy VAR models.
 - Both the Bayesian Information Criterion (BIC) and rolling-origin cross-validation select the same lag order, supporting the robustness of the empirical specification.
 
+### Impulse Response Functions
+
+![Impulse Response Functions](results/IRF_3x3_BIC_model.png)
+
 ---
 
 ## Technologies
